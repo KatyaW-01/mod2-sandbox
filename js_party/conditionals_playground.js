@@ -11,13 +11,18 @@ Write a function checkVotingEligibility that takes an age as input and prints a 
 */
 
 function checkVotingEligibility(age) {
-  // Your code here
+  if (age >= 18) {
+    console.log('You can vote!')
+  }
+  else {
+    console.log('Sorry you arent old enough')
+  }
 }
 
 // Check your work by uncommenting each of these invocations:
-// checkVotingEligibility(19)
-// checkVotingEligibility(15)
-// checkVotingEligibility(18)
+  checkVotingEligibility(19)
+checkVotingEligibility(15)
+checkVotingEligibility(18)
 
 
 /* Exercise 2 - Password Strength Checker
@@ -30,18 +35,28 @@ Strong: more than 12 characters
 */
 
 function checkPasswordStrength(password) {
-  // Your code here
+  if(password.length < 6) {
+    console.log('weak')
+  }
+  else if(password.length <= 12 && password.length >= 6){
+    console.log('medium')
+  }
+  else if(password.length > 12){
+    console.log('strong')
+  }
 }
 
 // Check your work by uncommenting each of these invocations:
-// checkPasswordStrength("pz394Gw86wwmh1")
-// checkPasswordStrength("12345")
-// checkPasswordStrength("myPass1!")
-
+checkPasswordStrength("pz394Gw86wwmh1")
+checkPasswordStrength("12345")
+checkPasswordStrength("myPass1!")
+//var name = 'Katya'
+//console.log(name.length)
 
 /* Exercise 3 - Grade Calculator
 
 Write a function calculateGrade that takes a numeric score (0-100) and returns the corresponding letter grade based on the following scale:
+
 
 A: 90-100
 B: 80-89
@@ -51,14 +66,29 @@ F: 0-59
 
 */
 
-function calculateGrade(score) {
-  // Your code here
+
+function calculateGrade(grade) {
+  if(grade >= 90 && grade <= 100){
+    console.log('A')
+  }
+  else if (grade >= 80 && grade <= 89){
+    console.log('B')
+  }
+  else if (grade >= 70 && grade <= 79){
+    console.log('C')
+  }
+  else if (grade >= 60 && grade <= 69){
+    console.log('D')
+  }
+  else {
+    console.log ('F')
+  }
 }
 
 // Check your work by uncommenting each of these invocations:
-// calculateGrade(95)
-// calculateGrade(86)
-// calculateGrade(79)
-// calculateGrade(61)
-// calculateGrade(52)
+calculateGrade(95)
+calculateGrade(86)
+calculateGrade(79)
+calculateGrade(61)
+calculateGrade(52)
 
