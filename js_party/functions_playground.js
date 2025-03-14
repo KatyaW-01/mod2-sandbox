@@ -2,7 +2,7 @@
       node js_party/functions_playground.js
 */
 
-console.log("functions_playground.js is running")
+// console.log("functions_playground.js is running")
 
 
 // Let's start with the examples from the lesson.  
@@ -14,14 +14,14 @@ function printGreeting(greeting) {
   console.log(greeting)
 }
 
-    // printGreeting('hi')  
+    printGreeting('hi')  
     
-    // printGreeting('sup')
+    printGreeting('sup')
     
-    // printGreeting('oh hello there darling!')
+    printGreeting('oh hello there darling!')
     
 // Now call the function again yourself, passing through whatever greeting you'd like.  Make sure you pass the greeting as a string (it must be in quotes).
-
+printGreeting('hello dearest love of my life')
 
 
 // Lesson Example 2
@@ -38,9 +38,9 @@ var supGreeting = captureGreeting('sup')
 
 var fancyGreeting = captureGreeting('oh hello there darling!')
 
-// console.log('hiGreeting: ', hiGreeting)
-// console.log('supGreeting: ', supGreeting)
-// console.log('fancyGreeting: ', fancyGreeting)
+console.log('hiGreeting: ', hiGreeting)
+console.log('supGreeting: ', supGreeting)
+console.log('fancyGreeting: ', fancyGreeting)
 
 
 
@@ -54,36 +54,61 @@ var captureGreetingArrowSyntax = (greeting) => {
 
 var helloGreeting = captureGreetingArrowSyntax('hello')  
 
-// console.log("helloGreeting: ", helloGreeting)
+console.log("helloGreeting: ", helloGreeting)
 
 
 // NOTE FOR THE EXERCISES BELOW: "print" or "log" both mean to use a console.log()
 
 /*  -- SECTION A: PRACTICING FUNCTIONS STRAIGHT UP -- */
 //1A. Make a function called sayName that logs your first name
+function sayName(name) {
+  var greeting = 'Hello lovely '
+  console.log(greeting + name)
+}
 
-
+sayName('Katya')
 //2A. Edit the sayName function above to create a variable inside of the function that is equal to a greeting. Change the console log to include the greeting concatenated with your name!
 
 
 //3A. Make a function called watchShow that console logs "I am watching". Then call the logFavoriteMovie function after the console log.
+function logFavoriteMovie(movie) {
+  return movie
+}
 
+function watchShow() {
+  console.log("I am watching " + logFavoriteMovie('Star Wars'))
 
+}
+watchShow()
 /*  --  SECTION B: FUNCTIONS WITH PARAMETERS. -- */
 //1B. Create a function takes in two numbers and logs the numbers added together. Invoke the function two times with different numbers.
-
+function math(num1,num2) {
+  return(num1 + num2)
+}
+var addition = math(123,57)
+console.log(addition)
 
 //2B. Create a function that takes in first name and last name and logs a greeting that greets somebody by first and last name. Call the function two times with different names.
+function greeting(first,last) {
+  console.log("hello " + first + last)
+}
+greeting('Katya ','Weicht')
 
+var greeting = (first,last) => {
+  console.log("hello " + first + last)
+}
 
-
+greeting('Katya ','Weicht')
 /*  -- SECTION C: FUNCTIONS WITH RETURNS, ARGS and PARAMS -- */
 //1C. Make a function that takes in two numbers as arguments and returns the sum of those two numbers. 
 // Create a variable called 'total' and assign the variable's value to be an invocation of your function (dont forget to pass in 2 numbers!)  Console log 'total'
 
 
 //2C. Make a function that takes in the name of a board game and a person's name and returns a string of "Do you want to play (board game name) with (persons name)?". Invoke the function with two different board game titles and names.
-
+function letsPlay(game,person) {
+  console.log(`Do you want to play ${game} with ${person}?`)
+}
+letsPlay('Shoots and Ladders', 'Marky')
 
 
 //  *** CANT GET ENOUGH FUNCTION PRACTICE??  HERE'S SOME MORE!
