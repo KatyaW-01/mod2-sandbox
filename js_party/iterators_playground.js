@@ -18,7 +18,7 @@ function printSnacksStatement(snacks) {
   }
 }
 
-// printSnacksStatement(snacks)
+printSnacksStatement(snacks)
 
 //  2. Uncomment the invocation below to see the same task accomplished using the forEach() iterator method instead of a for loop.
 
@@ -29,18 +29,19 @@ function forEachThruSnacks(snacks) {
   })
 }
 
-// forEachThruSnacks(snacks)
+forEachThruSnacks(snacks)
 
 // 3. Uncomment the invocation below to see the iterator method map() being used to create a *new array* with "I love <each snack>" strings in it.
 
 function mapOverSnacks(snacks) {
-  var loveSnackStatements = snacks.map(snack => {
-    return `I love ${snack}.`
-  })
+  var loveSnackStatements = snacks.map(snack => 
+   `I love ${snack}.`
+  )
   console.log(loveSnackStatements)
 }
 
-// mapOverSnacks(snacks)
+console.log('')
+mapOverSnacks(snacks)
 
 // 4. Uncomment the invocation below to see the iterator method find() being used to return the FIRST element in the array that meets the criteria of being 5 letters long.
 
@@ -51,7 +52,7 @@ function findFiveLetterSnack(snacks) {
   console.log(foundSnack)
 }
 
-// findFiveLetterSnack(snacks)
+findFiveLetterSnack(snacks)
 
 // 5. Uncomment the invocation below to see the iterator method filter() being used to return a new array of ALL snacks that meet the criteria of being more than 6 letters long.
 
@@ -62,7 +63,7 @@ function filterForOverSixLetters(snacks) {
   console.log(filteredSnacks)
 }
 
-// filterForOverSixLetters(snacks)
+filterForOverSixLetters(snacks)
 
 
 // 6. Reduce is pretty spicy!  Uncomment the invocation below to see the iterator method reduce() being used to iterate over the numbers array and return the sum of all the numbers.
@@ -77,8 +78,22 @@ function getSum(numbers) {
   console.log(total)
 }
 
-// getSum(numbers)
+getSum(numbers)
 // Expected result: 230
 
 
 // 7. You try it!  Try writing you own function called "shoutSnacks" that takes in the original "snacks" array and uses the iterator method "forEach" to console.log() each of the snacks changed to uppercase.  You'll also need to use the .toUpperCase() method.  Use MDN and google to help you!  Try it! Get weird!
+var snacks = ['cookies', 'crackers', 'chips', 'popcorn', 'pretzels']
+
+function shoutSnacksEach(snacks) {
+  snacks.forEach(snack => {var shout = snack.toUpperCase()
+  console.log(shout)
+  })
+}
+shoutSnacksEach(snacks)
+
+function shoutSnacks(snacks) {
+  var shout = snacks.map(snack => snack.toUpperCase())
+  console.log(shout)
+}
+shoutSnacks(snacks)
