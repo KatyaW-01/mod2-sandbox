@@ -4,7 +4,7 @@ JS Fundamentals Lesson Scratchpad
 To run the code in this file, run the command:
       node lessons/js_fundamentals.js
 */ 
-console.log("js_fundamentals.js is running")
+//console.log("js_fundamentals.js is running")
 
 
 /*
@@ -15,6 +15,8 @@ var firstName = 'Ben';
 var age = 26;
 const isNice = true;
 
+//console.log(firstName)
+
 const policeSketchDescription = {
   hair: 'blond',
   eyes: 'brown',
@@ -22,11 +24,18 @@ const policeSketchDescription = {
   visibleTattoos: 1
 }
 
+console.log(policeSketchDescription.hair)
+console.log('eye color:', policeSketchDescription["eyes"])
+console.log(policeSketchDescription.visibleTattoos)
+
 let favoriteFoods = ['pizza', 'blueberries', 'ice cream', 'sushi']
+
+console.log(favoriteFoods[0])
+console.log(favoriteFoods[3])
 
 let partnerName = null;
 let jobTitle;
-
+//console.log(jobTitle)
 
 
 
@@ -63,8 +72,12 @@ function evaluateSleep(hoursOfSleep) {
 
 
 
+function greetPerson(firstName,lastName) {
+  var greeting = "Hello" + " " + firstName + " " + lastName
+  console.log(greeting)
+  return greeting
+}
 
-
-
+greetPerson("Katya","Weicht")
 
 
