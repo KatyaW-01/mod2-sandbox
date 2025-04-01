@@ -50,14 +50,6 @@ var guitarPlayers = beatles.filter((beatle) => {
 //console.log(guitarPlayers)
 
 
-
-
-
-
-
-
-
-
 const prices = [4.99, 5.50, 7.00, 10.25];
 const increasedPrices = [];
 
@@ -66,11 +58,7 @@ prices.forEach((price) => {
   increasedPrices.push(newPrice)
 })
 
-console.log(increasedPrices)
-
-
-
-
+//console.log(increasedPrices)
 
 
 const dogs = [
@@ -84,4 +72,77 @@ dogs.forEach((dog) => {
   result += ` ${dog.name} has ${dog.numLegs} legs. \n`
 })
 
-console.log(result)
+//console.log(result)
+
+
+// ------------ MAP ITERATION ------------- //
+var countries = [
+  {
+    "countryCode": "AF",
+    "countryName": "Afghanistan",
+    "population": "29121286",
+    "capital": "Kabul",
+    "continentName": "Asia"
+  },
+  {
+    "countryCode": "AL",
+    "countryName": "Albania",
+    "population": "2986952",
+    "capital": "Tirana",
+    "continentName": "Europe"
+  },
+  {
+    "countryCode": "DZ",
+    "countryName": "Algeria",
+    "population": "34586184",
+    "capital": "Algiers",
+    "continentName": "Africa"
+  },
+  {
+    "countryCode": "AM",
+    "countryName": "Armenia",
+    "population": "29680000",
+    "capital": "Yerevan",
+    "continentName": "Asia"
+  }
+]
+
+function explainCodes(countries) {
+  var string = countries.map((country) => {
+    return `${country.countryCode} stands for ${country.countryName}`
+  })
+  return string
+} // => ["AF stands for Afghanistan","AL stands for Albania","DZ stands for Algeria"]
+
+//console.log(explainCodes(countries))
+
+var countryStrings = countries.map((country )=> {
+  return `${country.countryCode} stands for ${country.countryName}`
+})
+
+//console.log(countryStrings)
+
+function cleanCountryData(countries) {
+  var cleanCountries = countries.map((country) => {
+    return { "countryName": country.countryName, "capital": country.capital, "continentName": country.continentName }
+  })
+  return cleanCountries
+}
+
+//console.log(cleanCountryData(countries))
+
+
+// ------------------ FILTER --------------------------- //
+function filterAsianCountries(countries) {
+  var asianCountries = countries.filter((country) => country.continentName === "Asia")
+  return asianCountries
+}
+//console.log(filterAsianCountries(countries))
+
+//find all countries with a population greater than 1,500,000.
+function filterBigCountries(countries) {
+  var bigCountries = countries.filter((country) => country.population > 1500000)
+  return bigCountries
+}
+
+console.log(filterBigCountries(countries))
