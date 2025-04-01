@@ -146,3 +146,16 @@ function filterBigCountries(countries) {
 }
 
 console.log(filterBigCountries(countries))
+
+// ------------- FIND --------------- //
+
+
+
+// ----------------- ForEach -------------- //
+
+
+// ----------------------- REDUCE ---------------- //
+
+
+
+// --------------------- SORT --------------- //
