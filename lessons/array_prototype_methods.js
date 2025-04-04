@@ -189,25 +189,172 @@ function findFirstNorthAmericanCountry(countries2) {
   var selectedCountry = countries2.find((country) => country.continentName === "North America")
   return selectedCountry
 }
-console.log(findFirstNorthAmericanCountry(countries2))
+
+//console.log(findFirstNorthAmericanCountry(countries2))
 
 //find the first country with a capital that has a three-word name
 
-function findCapitalWordLength(countries){
-  for(var i=0; i < countries.length; i++){
-
-  }
-}
-function findThreeNameCapital(countries) {
-  var threeWordCapital = countries2.find((country)=> )
+function findThreeNameCapital() {
+  var threeWordCapital = countries2.find((country)=> country.capital.split(" ").length === 3)
+  return threeWordCapital
 }
 
+//console.log(findThreeNameCapital())
 
 // ----------------- ForEach -------------- //
+var countries3 = [
+  {
+    "countryCode": "AF",
+    "countryName": "Afghanistan",
+    "population": "29121286",
+    "capital": "Kabul",
+    "continentName": "Asia"
+  },
+  {
+    "countryCode": "AL",
+    "countryName": "Albania",
+    "population": "2986952",
+    "capital": "Tirana",
+    "continentName": "Europe"
+  },
+  {
+    "countryCode": "DZ",
+    "countryName": "Algeria",
+    "population": "34586184",
+    "capital": "Algiers",
+    "continentName": "Africa"
+  },
+]
+//returns an array of all the country codes
 
+function countryCodes(){
+  const countryCodesArray = []
+  countries3.forEach((country)=>{
+    countryCodesArray.push(country.countryCode)
+  })
+  return countryCodesArray
+}
+
+//console.log(countryCodes())
 
 // ----------------------- REDUCE ---------------- //
+var numbers = [1,2,5,7]
 
+function getProduct(){
+  let sum = numbers.reduce((acc,num)=>{
+    acc = acc * num
+    //console.log("acc:",acc)
+    //console.log("num:",num)
+    return acc
+  },1)
+  return sum
+}
 
+//console.log("product:", getProduct())
+
+var countries4 = [
+  {
+    "countryCode": "AF",
+    "countryName": "Afghanistan",
+    "population": "29121286",
+    "capital": "Kabul",
+    "continentName": "Asia"
+  },
+  {
+    "countryCode": "AL",
+    "countryName": "Albania",
+    "population": "2986952",
+    "capital": "Tirana",
+    "continentName": "Europe"
+  },
+  {
+    "countryCode": "DZ",
+    "countryName": "Algeria",
+    "population": "34586184",
+    "capital": "Algiers",
+    "continentName": "Africa"
+  },
+]
+
+function organizeByCountry(){
+  let newCountriesObject = countries4.reduce((acc,country)=>{
+    acc[country.countryName] = {
+      "countryCode": country.countryCode, 
+      "population": country.population, 
+      "capital": country.capital,
+      "continentName": country.continentName
+    }
+    return acc
+  },{})
+  return newCountriesObject
+}
+
+//console.log(organizeByCountry())
 
 // --------------------- SORT --------------- //
+
+var countries5 = [
+  {
+      "countryCode": "AS",
+      "countryName": "American Samoa",
+      "population": "57881",
+      "capital": "Pago Pago",
+      "continentName": "Oceania"
+  },
+  {
+    "countryCode": "AI",
+    "countryName": "Anguilla",
+    "population": "13254",
+    "capital": "The Valley",
+    "continentName": "North America"
+  },
+  {
+      "countryCode": "AD",
+      "countryName": "Andorra",
+      "population": "84000",
+      "capital": "Andorra la Vella",
+      "continentName": "Europe"
+  },
+  {
+      "countryCode": "AO",
+      "countryName": "Angola",
+      "population": "13068161",
+      "capital": "Luanda",
+      "continentName": "Africa"
+  },
+  {
+      "countryCode": "SX",
+      "countryName": "Sint Maarten",
+      "population": "37429",
+      "capital": "Philipsburg",
+      "continentName": "North America"
+  },
+];
+//sorts the countries alphabetically by countryCode.
+function sortByCountryCode(){
+  const sortedArray = countries5.sort((a,b)=>{
+    return a.countryCode.localeCompare(b.countryCode)
+  })
+  return sortedArray
+}
+
+//console.log(sortByCountryCode())
+
+function sortByPopulation(){
+  const sorted = countries5.sort((a,b)=>{
+    var popA = Number(a.population)
+    var popB = Number(b.population)
+
+    if (popA > popB) {
+      return -1;
+    } else if (popA < popB) {
+      return 1;
+    } else {
+      return 0;
+    }
+  })
+  
+  return sorted
+}
+
+console.log(sortByPopulation())
