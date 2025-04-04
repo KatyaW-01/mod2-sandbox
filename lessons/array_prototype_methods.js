@@ -4,7 +4,7 @@ JS Array Prototype Methods Lesson Scratchpad
 To run the code in this file, run the command:
   node lessons/array_prototype_methods.js
 */ 
-//console.log("array_prototype_methods.js is running")
+console.log("array_prototype_methods.js is running")
 
 
 var instructors = ["Erin", "Heather", "Abdul"];
@@ -145,10 +145,62 @@ function filterBigCountries(countries) {
   return bigCountries
 }
 
-console.log(filterBigCountries(countries))
+//console.log(filterBigCountries(countries))
 
 // ------------- FIND --------------- //
+var countries2 = [
+  {
+      "countryCode": "AS",
+      "countryName": "American Samoa",
+      "population": "57881",
+      "capital": "Pago Pago",
+      "continentName": "Oceania"
+  },
+  {
+    "countryCode": "AI",
+    "countryName": "Anguilla",
+    "population": "13254",
+    "capital": "The Valley",
+    "continentName": "North America"
+  },
+  {
+      "countryCode": "AD",
+      "countryName": "Andorra",
+      "population": "84000",
+      "capital": "Andorra la Vella",
+      "continentName": "Europe"
+  },
+  {
+      "countryCode": "AO",
+      "countryName": "Angola",
+      "population": "13068161",
+      "capital": "Luanda",
+      "continentName": "Africa"
+  },
+  {
+      "countryCode": "SX",
+      "countryName": "Sint Maarten",
+      "population": "37429",
+      "capital": "Philipsburg",
+      "continentName": "North America"
+  },
+];
+function findFirstNorthAmericanCountry(countries2) {
+  var selectedCountry = countries2.find((country) => country.continentName === "North America")
+  return selectedCountry
+}
+console.log(findFirstNorthAmericanCountry(countries2))
 
+//find the first country with a capital that has a three-word name
+
+function findCapitalWordLength(countries){
+  for(var i=0; i < countries.length; i++){
+
+  }
+}
+function findThreeNameCapital(countries) {
+  var threeWordCapital = countries2.find((country)=> )
+}
 
 
 // ----------------- ForEach -------------- //
