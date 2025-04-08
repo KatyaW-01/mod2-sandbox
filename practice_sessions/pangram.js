@@ -4,7 +4,7 @@ Pair Practice 2 - Pangram
 To run the code in this file, run the command:
   node practice_sessions/pangram.js
 */ 
-console.log("pangram.js is running")
+console.log("pangram.js is running\n")
 
 
 //Data
@@ -18,6 +18,12 @@ Write a function that takes in a string and counts how many words are in that st
 countWords(pangram) -->  9
 countWords(quote) -->  13
 */
+function countWords(string){
+  return string.split(" ").length
+}
+
+console.log("Number of words in pangram:", countWords(pangram))
+console.log("Number of words in quote:", countWords(quote))
 
 
 
@@ -28,6 +34,17 @@ countWordsByLength(pangram, 4) -->  5
 countWordsByLength(quote, 5) -->  7
 */
 
+function countWordsByLength(string,number){
+  let arrayOfWords = string.split(" ")
+
+  let resultsArray = arrayOfWords.filter((word)=> word.length >= number)
+
+  return resultsArray.length
+}
+
+console.log("Number of words in pangram longer than 4:", countWordsByLength(pangram,4))
+console.log("Number of words in quote longer than 5:", countWordsByLength(quote,5))
+
 
 /* LEVEL THREE
 Write a function that takes in a string. The function should return an array of words with each word in all caps.  *Hint* You might need to google a method to make a string all caps in JS.
@@ -37,7 +54,16 @@ makeUpperCase(pangram) -->  ['THE', 'QUICK', 'BROWN', 'FOX', 'JUMPS', 'OVER', 'T
 makeUpperCase(quote) -->  ['SUCKING', 'AT', 'SOMETHING', 'IS', 'THE', 'FIRST',
 'STEP', 'TOWARDS', 'BEING', 'KINDA', 'GOOD', 'AT', 'SOMETHING']
 */
+function makeUpperCase(string){
+  let arrayOfWords = string.split(" ")
+  let upperCaseArray = arrayOfWords.map((word)=>{
+    return word.toUpperCase()
+  })
+  return upperCaseArray
+}
 
+//console.log("Make pangram upper case:", makeUpperCase(pangram))
+//console.log("Make quote upper case:", makeUpperCase(quote))
 
 
 /* LEVEL FOUR
@@ -57,3 +83,17 @@ reorganizeWords(quote) -->  {
   '9': [ 'something', 'something' ]
 }
 */
+function reorganizeWords(string){
+  let stringArray = string.split(" ")
+
+
+  let newObject = stringArray.reduce((acc,word)=>{
+    acc[word.length] = stringArray.filter((string) => string.length === word.length)
+    return acc
+  },{})
+
+  return newObject
+}
+
+console.log(reorganizeWords(pangram))
+console.log(reorganizeWords(quote))
