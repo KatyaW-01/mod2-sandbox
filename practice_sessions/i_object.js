@@ -35,7 +35,14 @@ const craftSupplies = {
 };
 
 // Write a function that takes in a parameter of craft and returns a list of supplies needed
-
+function getSupplyList(craft){
+  let craftArray = craftSupplies[craft]
+  let supplies = craftArray.map((supply)=>{
+    return supply.name
+  })
+  return supplies
+}
+console.log(getSupplyList('crossStitching')) 
 //getSupplyList('crossStitching') 
     // --> ['fabric', 'needle', 'thread', 'scissors', hoop]
 

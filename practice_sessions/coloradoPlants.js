@@ -103,3 +103,29 @@ As you work:
 - Think through the code you're writing iteration by iteration. What data is it looking at each iteration, what do you want to do while it's look at that piece of data?
 
 */
+
+function organizeByHabitat(){
+  let organized = coloradoPlants.reduce((acc,plant)=>{
+    if (!acc[plant.habitat]){
+      acc[plant.habitat] = []
+    }
+    acc[plant.habitat].push(plant.name)
+    return acc
+  },{})
+  return organized
+}
+
+console.log(organizeByHabitat())
+
+// function organizeByHabitat() {
+//   let result = coloradoPlants.reduce ((acc, current)=> {
+//       if(acc[current.habitat]) {
+//         acc[current.habitat].push(current.name)}
+//       else {
+//         acc[current.habitat] = [current.name]
+//       }
+//       return acc
+//   }, {})
+//   return result
+//   }
+//   console.log(organizeByHabitat())
