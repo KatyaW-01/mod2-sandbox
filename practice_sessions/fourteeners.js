@@ -845,8 +845,11 @@ const fourteeners = {
         //should return 14060
         
 
-
-
+function findElevation(range,peak){
+  return fourteeners[range].peaks[peak].elevation
+}
+console.log(findElevation('sanJuanRange', 'sanLuisPeak'))
+console.log(findElevation('sangreDeCristoRange', 'ellingwoodPoint'))
 // Level 2
 
 //Write a function called findInfo that takes in a range, a specific peak AND a specified datapoint.  The function should return the value of the specified datapoint for the specified peak in the specified range.
@@ -864,7 +867,12 @@ const fourteeners = {
     // console.log(findInfo('frontRange', 'mountBierstadt', 'forest'))
         //should return 'Arapaho'
 
-
+function findInfo(range,peak,dataPoint){
+  return fourteeners[range].peaks[peak][dataPoint]
+}
+console.log(findInfo('sanJuanRange', 'sanLuisPeak', 'numberOfRoutes'))
+console.log(findInfo('sanJuanRange', 'sanLuisPeak', 'jerryLevel'))
+console.log(findInfo('frontRange', 'torreysPeak', 'elevation'))
 // Level 3
 
 //Write a function called findInfo that takes in a range, a specific peak.  The function should return a string that states the number of routes that peak has that have at least 3000 feet of gain.
@@ -882,8 +890,15 @@ const fourteeners = {
   // console.log(findHighGainRoutes('frontRange', 'graysPeak'))
       //should return 'This peak has 4 routes that have at least 3000 feet of gain.'
 
-
-
+function findHighGainRoutes(range,peak){
+  let routes = fourteeners[range].peaks[peak].routes
+  let filteredRoutes = routes.filter((route)=>route.gain >= 3000)
+  return `This peak has ${filteredRoutes.length} routes that have at least 3000 feet of gain`
+  
+}
+console.log(findHighGainRoutes('sanJuanRange', 'sanLuisPeak'))
+console.log(findHighGainRoutes('sangreDeCristoRange', 'ellingwoodPoint'))
+console.log(findHighGainRoutes('frontRange', 'torreysPeak'))
 // Level 4
 
 //Write a function called findInfo that takes in a range, a specific peak and a specified datapoint.  The function should return a string that states what total is achieved if hiking all routes for that peak, based on the specified datapoint.
@@ -900,3 +915,15 @@ const fourteeners = {
 
   // console.log(findTotal('frontRange', 'graysPeak', 'mileage'))
       //should return 'If you hike every route for this peak you will achieve 31.75 total mileage!'
+
+function findTotal(range,peak,dataPoint){
+  let routes = fourteeners[range].peaks[peak].routes
+
+  let sum = routes.reduce((acc,route)=>{
+    acc += route[dataPoint]
+    return acc
+  },0)
+  return `If you hike every route for this peak you will achieve ${sum} total ${dataPoint}!`
+}
+console.log(findTotal('sanJuanRange', 'sanLuisPeak', 'mileage'))
+console.log(findTotal('sanJuanRange', 'sanLuisPeak', 'gain'))
